@@ -23,8 +23,8 @@ def main():
     while True:
         contato = criar_contato()
         contatos.append(contato)
-        choice = input("Deseja continuar? (S/N) ")
-        if choice == "N":
+        escolha = input("Deseja continuar? (S/N) ")
+        if escolha == "N":
             break
     salvar_contatos(contatos)
 
