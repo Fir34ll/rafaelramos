@@ -1,4 +1,6 @@
 import pickle
+
+
 def criar_contato():
     name = input("Nome: ")
     phone_number = input("Número de telefone: ")
@@ -9,17 +11,23 @@ def criar_contato():
         "email": email
     }
     return contato
+
+
 def salvar_contatos(contatos):
     with open("contatos.bin", "wb") as f:
         pickle.dump(contatos, f)
+
+
 def main():
     contatos = []
     while True:
         contato = criar_contato()
         contatos.append(contato)
-        escolha = input("Deseja continuar? (S/N) ")
-        if escolha == "N":
+        choice = input("Deseja continuar? (S/N) ")
+        if choice == "N":
             break
     salvar_contatos(contatos)
+
+
 if __name__ == "__main__":
     main()
